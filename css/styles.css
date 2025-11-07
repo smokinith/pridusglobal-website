@@ -44,14 +44,14 @@ body {
 }
 
 .logo img {
-    height: 120px;
+    height: 90px;
     width: auto;
     object-fit: contain;
 }
 
 .nav {
     display: flex;
-    gap: 10px;
+    gap: 30px;
 }
 
 .nav-link {
