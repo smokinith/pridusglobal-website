@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.pridusglobal.com/sitemap.xml
+
+# Disallow admin or unnecessary pages
+Disallow: /cgi-bin/
+Disallow: *.log$
