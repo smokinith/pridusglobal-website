@@ -90,6 +90,50 @@
         </div>
     </section>
 
+    </section>
+
+    <!-- ROI Calculator -->
+    <section class="roi-section">
+        <div class="container">
+            <h2 class="text-center">Calculate Your Potential Savings</h2>
+            <p class="subtitle-text">See how much you could save with Pridus Global</p>
+            
+            <div class="roi-calculator">
+                <div class="calculator-inputs">
+                    <div class="input-group">
+                        <label for="salary">Candidate Salary ($)</label>
+                        <input type="number" id="salary" value="120000" min="50000" step="10000">
+                    </div>
+                    <div class="input-group">
+                        <label for="hires">Number of Hires</label>
+                        <input type="number" id="hires" value="3" min="1" max="20">
+                    </div>
+                    <button class="btn btn-primary" onclick="calculateROI()">Calculate Savings</button>
+                </div>
+                
+                <div class="calculator-results" id="results">
+                    <div class="result-card traditional-cost">
+                        <h4>Traditional Agency Cost</h4>
+                        <div class="result-amount" id="traditionalCost">$54,000 - $90,000</div>
+                        <p class="result-note">(15-25% of salary × hires)</p>
+                    </div>
+                    
+                    <div class="result-card pridus-cost">
+                        <h4>Pridus Global Cost</h4>
+                        <div class="result-amount" id="pridusCost">$4,500 - $18,000</div>
+                        <p class="result-note">(Tier 2-4 pricing)</p>
+                    </div>
+                    
+                    <div class="result-card savings">
+                        <h4>💰 Your Savings</h4>
+                        <div class="result-amount savings-amount" id="savings">$36,000 - $72,000</div>
+                        <p class="result-note">That's a <strong id="savingsPercent">67-80%</strong> cost reduction!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- The Problem -->
     <section class="problem-section">
         <div class="container">
@@ -187,49 +231,7 @@
                 </div>
             </solutions-grid>
         </div>
-    </section>
 
-    <!-- ROI Calculator -->
-    <section class="roi-section">
-        <div class="container">
-            <h2 class="text-center">Calculate Your Potential Savings</h2>
-            <p class="subtitle-text">See how much you could save with Pridus Global</p>
-            
-            <div class="roi-calculator">
-                <div class="calculator-inputs">
-                    <div class="input-group">
-                        <label for="salary">Candidate Salary ($)</label>
-                        <input type="number" id="salary" value="120000" min="50000" step="10000">
-                    </div>
-                    <div class="input-group">
-                        <label for="hires">Number of Hires</label>
-                        <input type="number" id="hires" value="3" min="1" max="20">
-                    </div>
-                    <button class="btn btn-primary" onclick="calculateROI()">Calculate Savings</button>
-                </div>
-                
-                <div class="calculator-results" id="results">
-                    <div class="result-card traditional-cost">
-                        <h4>Traditional Agency Cost</h4>
-                        <div class="result-amount" id="traditionalCost">$54,000 - $90,000</div>
-                        <p class="result-note">(15-25% of salary × hires)</p>
-                    </div>
-                    
-                    <div class="result-card pridus-cost">
-                        <h4>Pridus Global Cost</h4>
-                        <div class="result-amount" id="pridusCost">$4,500 - $18,000</div>
-                        <p class="result-note">(Tier 2-4 pricing)</p>
-                    </div>
-                    
-                    <div class="result-card savings">
-                        <h4>💰 Your Savings</h4>
-                        <div class="result-amount savings-amount" id="savings">$36,000 - $72,000</div>
-                        <p class="result-note">That's a <strong id="savingsPercent">67-80%</strong> cost reduction!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- CTA -->
     <section class="cta">
