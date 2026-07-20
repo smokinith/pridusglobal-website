@@ -293,30 +293,6 @@ img {
     will-change: transform;
 }
 
-/* Reveal-mask image wipe: images unmask (clip-path) + zoom out when scrolled into view.
-   Images are fully visible by default; the hidden start state applies ONLY when JS is
-   running (html.js) and motion is allowed, so images never vanish if JS doesn't run. */
-@media (prefers-reduced-motion: no-preference) {
-    .js .service-detail-image,
-    .js .about-image {
-        clip-path: inset(0 100% 0 0);
-        transition: clip-path 0.9s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .js .service-detail-image img,
-    .js .about-image img {
-        transform: scale(1.12);
-        transition: transform 1.1s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
-    }
-}
-.service-detail-image.is-visible,
-.about-image.is-visible {
-    clip-path: inset(0 0 0 0);
-}
-.service-detail-image.is-visible img,
-.about-image.is-visible img {
-    transform: scale(1);
-}
-
 .tilt {
     transform-style: preserve-3d;
     will-change: transform;

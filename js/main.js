@@ -96,22 +96,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Reveal-mask image wipe (clip-path + zoom), toggled when the image scrolls in
-    const wipeEls = document.querySelectorAll('.service-detail-image, .about-image');
-    if (wipeEls.length && !prefersReducedMotion) {
-        const wipeObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                    wipeObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.25, rootMargin: '0px 0px -40px 0px' });
-        wipeEls.forEach((el) => wipeObserver.observe(el));
-    } else {
-        wipeEls.forEach((el) => el.classList.add('is-visible'));
-    }
-
     // Scroll progress bar + subtle parallax on decorative canvas layers
     const progressBar = document.querySelector('.scroll-progress');
     const parallaxLayers = prefersReducedMotion ? [] :
