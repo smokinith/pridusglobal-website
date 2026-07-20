@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Scroll-reveal animations
+    // Scroll-reveal animations (IntersectionObserver — works in every browser)
     const revealEls = document.querySelectorAll('.reveal');
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (revealEls.length) {
@@ -94,6 +94,50 @@ document.addEventListener('DOMContentLoaded', function() {
 
             revealEls.forEach((el) => revealObserver.observe(el));
         }
+    }
+
+    // Reveal-mask image wipe (clip-path + zoom), toggled when the image scrolls in
+    const wipeEls = document.querySelectorAll('.service-detail-image, .about-image');
+    if (wipeEls.length && !prefersReducedMotion) {
+        const wipeObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    wipeObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.25, rootMargin: '0px 0px -40px 0px' });
+        wipeEls.forEach((el) => wipeObserver.observe(el));
+    } else {
+        wipeEls.forEach((el) => el.classList.add('is-visible'));
+    }
+
+    // Scroll progress bar + subtle parallax on decorative canvas layers
+    const progressBar = document.querySelector('.scroll-progress');
+    const parallaxLayers = prefersReducedMotion ? [] :
+        document.querySelectorAll('.page-hero .ambient-canvas, .why-cta-section .ambient-canvas');
+    if (progressBar || parallaxLayers.length) {
+        let ticking = false;
+        const onScroll = () => {
+            if (ticking) return;
+            ticking = true;
+            requestAnimationFrame(() => {
+                const scrollTop = window.scrollY || document.documentElement.scrollTop;
+                if (progressBar) {
+                    const max = document.documentElement.scrollHeight - window.innerHeight;
+                    const pct = max > 0 ? scrollTop / max : 0;
+                    progressBar.style.transform = `scaleX(${pct.toFixed(4)})`;
+                }
+                parallaxLayers.forEach((layer) => {
+                    const rect = layer.parentElement.getBoundingClientRect();
+                    const offset = (rect.top / window.innerHeight - 0.5) * -16;
+                    layer.style.transform = `translateY(${offset.toFixed(1)}px)`;
+                });
+                ticking = false;
+            });
+        };
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
     }
 
     // 3D tilt on hover for cards
