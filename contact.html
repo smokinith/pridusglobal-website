@@ -3,8 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Pridus Global | Software Consulting & Technology Services</title>
-    <meta name="description" content="Get in touch with Pridus Global for software consulting, IT services, and talent acquisition. Contact Nithin Maganahalli at +1-732-456-8835.">
+    <title>Contact Pridus Global | Recruitment & Consulting Services</title>
+    <meta name="description" content="Get in touch with Pridus Global for recruitment, talent acquisition, and HR consulting services. Contact Nithin Maganahalli at +1-732-456-8835.">
+    <link rel="canonical" href="https://www.pridusglobal.com/contact.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <!-- Google tag (gtag.js) -->
@@ -21,7 +27,7 @@
         <div class="container">
             <div class="header-content">
                 <a href="index.html" class="logo">
-                    <img src="images/pridus-logo.png" alt="Pridus Global Logo">
+                    <span class="logo-chip"><img src="images/pridus-logo.png" alt="Pridus Global Logo"></span>
                 </a>
                 <nav class="nav" id="nav">
                     <a href="index.html" class="nav-link">Home</a>
@@ -40,6 +46,7 @@
     </header>
 
     <section class="page-hero">
+        <canvas class="ambient-canvas"></canvas>
         <div class="container">
             <h1 class="gradient-text">Get in Touch</h1>
             <p>Ready to transform your recruitment? Let's start a conversation.</p>
@@ -49,7 +56,7 @@
     <section class="contact-section">
         <div class="container">
             <div class="contact-grid">
-                <div class="contact-form-wrapper">
+                <div class="contact-form-wrapper reveal">
                     <h2>Send Us a Message</h2>
                     <form action="https://formspree.io/f/xblrkkbd" method="POST" class="contact-form" id="contactForm">
                         <div class="form-group">
@@ -82,27 +89,27 @@
                     </div>
                 </div>
 
-                <div class="contact-info-wrapper">
+                <div class="contact-info-wrapper reveal">
                     <h2>Contact Information</h2>
-                    <p>Have questions about our software consulting or technology services? We're here to help. Reach out through any of the channels below.</p>
-                    
+                    <p>Have questions about our recruitment or consulting services? We're here to help. Reach out through any of the channels below.</p>
+
                     <div class="contact-info-cards">
-                        <div class="contact-info-card">
-                            <div class="contact-icon">📞</div>
+                        <div class="contact-info-card glass-card">
+                            <div class="icon-badge contact-icon">📞</div>
                             <div class="contact-details">
                                 <span class="contact-label">Phone</span>
                                 <a href="tel:+17324568835" class="contact-value">+1-732-456-8835</a>
                             </div>
                         </div>
-                        <div class="contact-info-card">
-                            <div class="contact-icon">✉️</div>
+                        <div class="contact-info-card glass-card">
+                            <div class="icon-badge contact-icon">✉️</div>
                             <div class="contact-details">
                                 <span class="contact-label">Email</span>
                                 <a href="mailto:nithin@pridusglobal.com" class="contact-value">nithin@pridusglobal.com</a>
                             </div>
                         </div>
-                        <div class="contact-info-card">
-                            <div class="contact-icon">🌐</div>
+                        <div class="contact-info-card glass-card">
+                            <div class="icon-badge contact-icon">🌐</div>
                             <div class="contact-details">
                                 <span class="contact-label">Website</span>
                                 <a href="https://www.pridusglobal.com" class="contact-value">www.pridusglobal.com</a>
@@ -147,7 +154,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h3>Pridus Global</h3>
+                    <span class="logo-chip"><img src="images/pridus-logo.png" alt="Pridus Global Logo" style="height:34px;"></span>
                     <p>Transforming recruitment through innovation. We connect extraordinary talent with forward-thinking organizations.</p>
                 </div>
                 <div class="footer-col">
@@ -175,5 +182,6 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script type="module" src="js/scene3d.js"></script>
 </body>
 </html>

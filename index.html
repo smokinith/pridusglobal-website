@@ -4,21 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pridus Global - Recruitment & Consulting Services | United States</title>
-    
+
     <!-- SEO Meta Tags -->
     <meta name="description" content="Professional recruitment and consulting services firm in the United States. Expert talent acquisition, executive search, and HR consulting solutions.">
     <meta name="keywords" content="recruitment services, consulting, talent acquisition, executive search, HR consulting, staffing solutions USA">
     <meta name="author" content="Pridus Global">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.pridusglobal.com/">
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.pridusglobal.com">
     <meta property="og:title" content="Pridus Global - Recruitment & Consulting Services">
     <meta property="og:description" content="Professional recruitment and consulting services firm in the United States.">
     <meta property="og:image" content="https://www.pridusglobal.com/images/pridus-logo.png">
-    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <!-- Google tag (gtag.js) -->
@@ -36,7 +40,7 @@
         <div class="container">
             <div class="header-content">
                 <a href="index.html" class="logo">
-                    <img src="images/pridus-logo.png" alt="Pridus Global Logo">
+                    <span class="logo-chip"><img src="images/pridus-logo.png" alt="Pridus Global Logo"></span>
                 </a>
                 <nav class="nav" id="nav">
                     <a href="index.html" class="nav-link active">Home</a>
@@ -56,38 +60,39 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-overlay"></div>
+        <canvas id="hero-canvas"></canvas>
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title animate-fade-in">
+                <h1 class="hero-title">
                     <span class="gradient-text">Your Trusted Partner</span><br>
-                    <span>in Recruitment & Consulting</span>
+                    <span>in Recruitment &amp; Consulting</span>
                 </h1>
-                <p class="hero-subtitle animate-fade-in-delay">Connecting exceptional talent with forward-thinking organizations across the United States. Expert recruitment solutions tailored to your business needs.</p>
-                <div class="hero-buttons animate-fade-in-delay-2">
+                <p class="hero-subtitle">Connecting exceptional talent with forward-thinking organizations across the United States. Expert recruitment solutions tailored to your business needs.</p>
+                <div class="hero-buttons">
                     <a href="services.html" class="btn btn-primary btn-large">Our Services</a>
                     <a href="contact.html" class="btn btn-outline btn-large">Contact Us</a>
                 </div>
             </div>
         </div>
+        <span class="scroll-cue"></span>
     </section>
 
     <!-- Value Proposition -->
     <section class="value-prop">
         <div class="container">
             <div class="value-grid">
-                <div class="value-item">
-                    <div class="value-icon">🎯</div>
+                <div class="value-item reveal">
+                    <div class="icon-badge">🎯</div>
                     <h3>Expert Recruitment</h3>
                     <p>Specialized talent acquisition across all industries</p>
                 </div>
-                <div class="value-item">
-                    <div class="value-icon">💼</div>
+                <div class="value-item reveal">
+                    <div class="icon-badge">💼</div>
                     <h3>Consulting Services</h3>
                     <p>Strategic HR and business consulting</p>
                 </div>
-                <div class="value-item">
-                    <div class="value-icon">🇺🇸</div>
+                <div class="value-item reveal">
+                    <div class="icon-badge">🇺🇸</div>
                     <h3>US-Based</h3>
                     <p>Serving organizations nationwide</p>
                 </div>
@@ -98,67 +103,67 @@
     <!-- Services Overview -->
     <section class="services-preview">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header reveal">
                 <h2>Our Services</h2>
                 <p>Comprehensive recruitment and consulting solutions for your organization</p>
             </div>
             <div class="services-grid">
                 <!-- Permanent Placement -->
-                <div class="service-card">
+                <div class="service-card glass-card tilt reveal">
                     <div class="service-content">
                         <h3>Permanent Placement</h3>
                         <p class="service-desc">Full-cycle recruitment services to identify, attract, and secure top-tier permanent employees for your organization.</p>
                         <ul class="service-highlights">
-                            <li>✓ Executive search</li>
-                            <li>✓ Mid-level professionals</li>
-                            <li>✓ Entry-level positions</li>
-                            <li>✓ Nationwide candidate network</li>
+                            <li>Executive search</li>
+                            <li>Mid-level professionals</li>
+                            <li>Entry-level positions</li>
+                            <li>Nationwide candidate network</li>
                         </ul>
                         <a href="services.html" class="btn btn-primary btn-full">Learn More</a>
                     </div>
                 </div>
 
                 <!-- Contract Staffing -->
-                <div class="service-card featured">
+                <div class="service-card glass-card tilt featured reveal">
                     <div class="popular-badge">⭐ POPULAR</div>
                     <div class="service-content">
                         <h3>Contract Staffing</h3>
                         <p class="service-desc">Flexible staffing solutions for temporary, contract, and contract-to-hire positions across various industries and skill levels.</p>
                         <ul class="service-highlights">
-                            <li>✓ Short & long-term contracts</li>
-                            <li>✓ Contract-to-hire options</li>
-                            <li>✓ Specialized skill sets</li>
-                            <li>✓ Quick turnaround</li>
+                            <li>Short &amp; long-term contracts</li>
+                            <li>Contract-to-hire options</li>
+                            <li>Specialized skill sets</li>
+                            <li>Quick turnaround</li>
                         </ul>
                         <a href="services.html" class="btn btn-primary btn-full">Learn More</a>
                     </div>
                 </div>
 
                 <!-- Executive Search -->
-                <div class="service-card">
+                <div class="service-card glass-card tilt reveal">
                     <div class="service-content">
                         <h3>Executive Search</h3>
                         <p class="service-desc">Confidential, high-touch executive recruitment for C-suite, VP-level, and senior leadership positions.</p>
                         <ul class="service-highlights">
-                            <li>✓ C-suite recruitment</li>
-                            <li>✓ Board-level positions</li>
-                            <li>✓ Confidential searches</li>
-                            <li>✓ Comprehensive assessments</li>
+                            <li>C-suite recruitment</li>
+                            <li>Board-level positions</li>
+                            <li>Confidential searches</li>
+                            <li>Comprehensive assessments</li>
                         </ul>
                         <a href="services.html" class="btn btn-primary btn-full">Learn More</a>
                     </div>
                 </div>
 
                 <!-- Consulting Services -->
-                <div class="service-card">
+                <div class="service-card glass-card tilt reveal">
                     <div class="service-content">
                         <h3>HR Consulting</h3>
                         <p class="service-desc">Strategic HR consulting services including workforce planning, organizational development, and talent management strategies.</p>
                         <ul class="service-highlights">
-                            <li>✓ Workforce planning</li>
-                            <li>✓ Talent strategy</li>
-                            <li>✓ Organizational design</li>
-                            <li>✓ Compensation analysis</li>
+                            <li>Workforce planning</li>
+                            <li>Talent strategy</li>
+                            <li>Organizational design</li>
+                            <li>Compensation analysis</li>
                         </ul>
                         <a href="services.html" class="btn btn-primary btn-full">Learn More</a>
                     </div>
@@ -170,32 +175,74 @@
     <!-- Industries Served -->
     <section class="industries-section">
         <div class="container">
-            <h2 class="text-center">Industries We Serve</h2>
-            <p class="subtitle-text">Specialized recruitment expertise across key sectors</p>
+            <h2 class="text-center reveal">Industries We Serve</h2>
+            <p class="subtitle-text reveal">Specialized recruitment expertise across key sectors</p>
             <div class="industries-grid">
-                <div class="industry-card">
+                <div class="industry-card glass-card tilt reveal">
+                    <div class="icon-badge">💻</div>
                     <h4>Technology</h4>
                     <p>Software development, IT infrastructure, cybersecurity, data science</p>
                 </div>
-                <div class="industry-card">
+                <div class="industry-card glass-card tilt reveal">
+                    <div class="icon-badge">🏥</div>
                     <h4>Healthcare</h4>
                     <p>Clinical staff, healthcare administration, medical professionals</p>
                 </div>
-                <div class="industry-card">
+                <div class="industry-card glass-card tilt reveal">
+                    <div class="icon-badge">💰</div>
                     <h4>Finance</h4>
                     <p>Banking, insurance, accounting, financial services</p>
                 </div>
-                <div class="industry-card">
+                <div class="industry-card glass-card tilt reveal">
+                    <div class="icon-badge">🏭</div>
                     <h4>Manufacturing</h4>
                     <p>Operations, engineering, supply chain, quality control</p>
                 </div>
-                <div class="industry-card">
+                <div class="industry-card glass-card tilt reveal">
+                    <div class="icon-badge">🤝</div>
                     <h4>Professional Services</h4>
                     <p>Consulting, legal, marketing, sales professionals</p>
                 </div>
-                <div class="industry-card">
-                    <h4>Retail & E-commerce</h4>
+                <div class="industry-card glass-card tilt reveal">
+                    <div class="icon-badge">🛍️</div>
+                    <h4>Retail &amp; E-commerce</h4>
                     <p>Store management, logistics, customer service, digital commerce</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>What Clients Say</h2>
+                <p>Real feedback from the teams we've helped build</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card glass-card tilt reveal">
+                    <span class="quote-mark">&ldquo;</span>
+                    <p class="testimonial-text">Finding senior developers who actually match our stack and culture used to take us months. Pridus Global understood our technical requirements on day one. Every candidate they put forward was well-vetted, saving our engineering team dozens of hours in wasted interviews.</p>
+                    <div class="testimonial-author">
+                        <strong>VP of Engineering</strong>
+                        <span>Series B SaaS Platform</span>
+                    </div>
+                </div>
+                <div class="testimonial-card glass-card tilt reveal">
+                    <span class="quote-mark">&ldquo;</span>
+                    <p class="testimonial-text">When we needed to scale our backend team by six engineers in under a month, Pridus Global delivered. Their speed without sacrificing candidate quality was impressive — they felt like a natural extension of our internal recruiting team.</p>
+                    <div class="testimonial-author">
+                        <strong>Director of Talent Acquisition</strong>
+                        <span>Mid-Size Tech Firm</span>
+                    </div>
+                </div>
+                <div class="testimonial-card glass-card tilt reveal">
+                    <span class="quote-mark">&ldquo;</span>
+                    <p class="testimonial-text">Working with Pridus Global has been a seamless experience. They don't just throw resumes at the wall; they listen, adapt quickly to feedback, and provide transparent communication throughout the process. They're our go-to partner for critical tech hires.</p>
+                    <div class="testimonial-author">
+                        <strong>Engineering Manager</strong>
+                        <span>Cloud Solutions Provider</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -203,10 +250,11 @@
 
     <!-- Why Choose Us -->
     <section class="why-cta-section">
+        <canvas class="ambient-canvas"></canvas>
         <div class="container">
-            <div class="why-cta-content">
+            <div class="why-cta-content reveal">
                 <h2>Why Partner With Pridus Global?</h2>
-                <p>Experience, expertise, and a proven track record of successful placements</p>
+                <p>Experience, expertise, and a consultative approach to every search</p>
                 <a href="about.html" class="btn btn-white btn-large">Learn More About Us</a>
             </div>
         </div>
@@ -229,7 +277,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h3>Pridus Global</h3>
+                    <span class="logo-chip"><img src="images/pridus-logo.png" alt="Pridus Global Logo" style="height:34px;"></span>
                     <p>Professional recruitment and consulting services firm dedicated to connecting exceptional talent with leading organizations across the United States.</p>
                     <div class="social-links">
                         <a href="#">LinkedIn</a>
@@ -261,5 +309,6 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script type="module" src="js/scene3d.js"></script>
 </body>
 </html>

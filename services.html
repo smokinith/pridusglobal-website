@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Services | Pridus Global Recruitment & Consulting</title>
     <meta name="description" content="Comprehensive recruitment and consulting services including permanent placement, contract staffing, executive search, and HR consulting.">
+    <link rel="canonical" href="https://www.pridusglobal.com/services.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <!-- Google tag (gtag.js) -->
@@ -21,7 +27,7 @@
         <div class="container">
             <div class="header-content">
                 <a href="index.html" class="logo">
-                    <img src="images/pridus-logo.png" alt="Pridus Global Logo">
+                    <span class="logo-chip"><img src="images/pridus-logo.png" alt="Pridus Global Logo"></span>
                 </a>
                 <nav class="nav" id="nav">
                     <a href="index.html" class="nav-link">Home</a>
@@ -40,6 +46,7 @@
     </header>
 
     <section class="page-hero">
+        <canvas class="ambient-canvas"></canvas>
         <div class="container">
             <h1 class="gradient-text">Our Services</h1>
             <p>Comprehensive recruitment and consulting solutions tailored to your needs</p>
@@ -50,15 +57,15 @@
     <section class="services-detail">
         <div class="container">
             <!-- Permanent Placement -->
-            <div class="service-detail-card">
+            <div class="service-detail-card reveal">
                 <div class="service-detail-image">
                     <img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c" alt="Permanent Placement">
                 </div>
                 <div class="service-detail-content">
                     <h2>Permanent Placement Services</h2>
                     <p>Our permanent placement services provide end-to-end recruitment solutions for organizations seeking to hire full-time employees. We handle the entire recruitment lifecycle, from initial job analysis to final placement and onboarding support.</p>
-                    
-                    <div class="features-box">
+
+                    <div class="features-box glass-card">
                         <h4>What We Offer</h4>
                         <ul>
                             <li>Comprehensive needs assessment and job analysis</li>
@@ -71,7 +78,7 @@
                         </ul>
                     </div>
 
-                    <div class="highlights-box">
+                    <div class="highlights-box glass-card">
                         <h4>Ideal For</h4>
                         <div class="highlights-grid">
                             <span>• Executive and leadership roles</span>
@@ -86,15 +93,15 @@
             </div>
 
             <!-- Contract Staffing -->
-            <div class="service-detail-card reverse">
+            <div class="service-detail-card reverse reveal">
                 <div class="service-detail-image">
                     <img src="https://images.unsplash.com/photo-1568992687947-868a62a9f521" alt="Contract Staffing">
                 </div>
                 <div class="service-detail-content">
                     <h2>Contract Staffing Solutions</h2>
                     <p>Flexible staffing solutions for temporary, seasonal, or project-based needs. Our contract staffing services provide qualified professionals on a contract basis, with options for contract-to-hire arrangements.</p>
-                    
-                    <div class="features-box">
+
+                    <div class="features-box glass-card">
                         <h4>What We Offer</h4>
                         <ul>
                             <li>Rapid deployment of qualified contractors</li>
@@ -107,7 +114,7 @@
                         </ul>
                     </div>
 
-                    <div class="highlights-box">
+                    <div class="highlights-box glass-card">
                         <h4>Ideal For</h4>
                         <div class="highlights-grid">
                             <span>• Project-based work</span>
@@ -122,15 +129,15 @@
             </div>
 
             <!-- Executive Search -->
-            <div class="service-detail-card">
+            <div class="service-detail-card reveal">
                 <div class="service-detail-image">
                     <img src="https://images.pexels.com/photos/4342496/pexels-photo-4342496.jpeg" alt="Executive Search">
                 </div>
                 <div class="service-detail-content">
                     <h2>Executive Search Services</h2>
                     <p>Confidential, high-touch executive recruitment for C-suite, board-level, and senior leadership positions. Our executive search practice combines deep industry knowledge with a rigorous, consultative approach.</p>
-                    
-                    <div class="features-box">
+
+                    <div class="features-box glass-card">
                         <h4>What We Offer</h4>
                         <ul>
                             <li>Confidential search process</li>
@@ -144,7 +151,7 @@
                         </ul>
                     </div>
 
-                    <div class="highlights-box">
+                    <div class="highlights-box glass-card">
                         <h4>Ideal For</h4>
                         <div class="highlights-grid">
                             <span>• C-suite positions (CEO, CFO, CTO, etc.)</span>
@@ -159,15 +166,15 @@
             </div>
 
             <!-- HR Consulting -->
-            <div class="service-detail-card reverse">
+            <div class="service-detail-card reverse reveal">
                 <div class="service-detail-image">
                     <img src="https://images.pexels.com/photos/4344860/pexels-photo-4344860.jpeg" alt="HR Consulting">
                 </div>
                 <div class="service-detail-content">
                     <h2>HR Consulting Services</h2>
                     <p>Strategic HR consulting to optimize your talent management, organizational structure, and workforce planning. We provide expert guidance to help you build and maintain a high-performing organization.</p>
-                    
-                    <div class="features-box">
+
+                    <div class="features-box glass-card">
                         <h4>What We Offer</h4>
                         <ul>
                             <li>Workforce planning and strategy</li>
@@ -181,7 +188,7 @@
                         </ul>
                     </div>
 
-                    <div class="highlights-box">
+                    <div class="highlights-box glass-card">
                         <h4>Ideal For</h4>
                         <div class="highlights-grid">
                             <span>• Organizational transformation</span>
@@ -200,38 +207,48 @@
     <!-- Process Section -->
     <section class="process-section">
         <div class="container">
-            <h2 class="text-center">Our Recruitment Process</h2>
-            <p class="subtitle-text">A proven, systematic approach to finding the right talent</p>
-            
+            <h2 class="text-center reveal">Our Recruitment Process</h2>
+            <p class="subtitle-text reveal">A proven, systematic approach to finding the right talent</p>
+
             <div class="process-steps">
-                <div class="process-step">
+                <div class="process-step reveal">
                     <div class="step-number">1</div>
-                    <h3>Discovery & Planning</h3>
-                    <p>We begin by understanding your organization, culture, and specific hiring needs. This includes detailed job analysis and development of a customized recruitment strategy.</p>
+                    <div>
+                        <h3>Discovery &amp; Planning</h3>
+                        <p>We begin by understanding your organization, culture, and specific hiring needs. This includes detailed job analysis and development of a customized recruitment strategy.</p>
+                    </div>
                 </div>
-                
-                <div class="process-step">
+
+                <div class="process-step reveal">
                     <div class="step-number">2</div>
-                    <h3>Candidate Sourcing</h3>
-                    <p>Leveraging our extensive network and advanced sourcing techniques, we identify and engage with qualified candidates both actively seeking opportunities and passive talent.</p>
+                    <div>
+                        <h3>Candidate Sourcing</h3>
+                        <p>Leveraging our extensive network and advanced sourcing techniques, we identify and engage with qualified candidates both actively seeking opportunities and passive talent.</p>
+                    </div>
                 </div>
-                
-                <div class="process-step">
+
+                <div class="process-step reveal">
                     <div class="step-number">3</div>
-                    <h3>Screening & Assessment</h3>
-                    <p>Comprehensive evaluation including skills assessment, cultural fit analysis, and thorough background verification to ensure we present only the most qualified candidates.</p>
+                    <div>
+                        <h3>Screening &amp; Assessment</h3>
+                        <p>Comprehensive evaluation including skills assessment, cultural fit analysis, and thorough background verification to ensure we present only the most qualified candidates.</p>
+                    </div>
                 </div>
-                
-                <div class="process-step">
+
+                <div class="process-step reveal">
                     <div class="step-number">4</div>
-                    <h3>Presentation & Interview</h3>
-                    <p>We present shortlisted candidates with detailed profiles and coordinate the interview process, providing guidance and feedback throughout.</p>
+                    <div>
+                        <h3>Presentation &amp; Interview</h3>
+                        <p>We present shortlisted candidates with detailed profiles and coordinate the interview process, providing guidance and feedback throughout.</p>
+                    </div>
                 </div>
-                
-                <div class="process-step">
+
+                <div class="process-step reveal">
                     <div class="step-number">5</div>
-                    <h3>Offer & Onboarding</h3>
-                    <p>Support through offer negotiation, acceptance, and smooth transition into your organization with post-placement follow-up to ensure success.</p>
+                    <div>
+                        <h3>Offer &amp; Onboarding</h3>
+                        <p>Support through offer negotiation, acceptance, and smooth transition into your organization with post-placement follow-up to ensure success.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -253,8 +270,8 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h3>Pridus Global</h3>
-                    <p>Professional recruitment and consulting services firm dedicated to connecting exceptional talent with leading organizations.</p>
+                    <span class="logo-chip"><img src="images/pridus-logo.png" alt="Pridus Global Logo" style="height:34px;"></span>
+                    <p>Professional recruitment and consulting services firm dedicated to connecting exceptional talent with leading organizations across the United States.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Quick Links</h4>
@@ -281,5 +298,6 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script type="module" src="js/scene3d.js"></script>
 </body>
 </html>
