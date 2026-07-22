@@ -124,6 +124,32 @@ document.addEventListener('DOMContentLoaded', function() {
         onScroll();
     }
 
+    // Scroll-stack depth: scale down + dim each card once the next one covers it.
+    // Pure enhancement — cards stack via CSS position:sticky regardless of this.
+    const stackCards = Array.from(document.querySelectorAll('.stack-card'));
+    if (stackCards.length && !prefersReducedMotion) {
+        let stTicking = false;
+        const updateStack = () => {
+            stTicking = false;
+            stackCards.forEach((card, i) => {
+                const next = stackCards[i + 1];
+                if (!next) { card.style.transform = ''; card.style.filter = ''; return; }
+                const dist = next.getBoundingClientRect().top - card.getBoundingClientRect().top;
+                const covered = Math.min(Math.max(1 - dist / (card.offsetHeight * 0.9), 0), 1);
+                card.style.transform = `scale(${(1 - covered * 0.06).toFixed(3)})`;
+                card.style.filter = `brightness(${(1 - covered * 0.34).toFixed(3)})`;
+            });
+        };
+        const onStackScroll = () => {
+            if (stTicking) return;
+            stTicking = true;
+            requestAnimationFrame(updateStack);
+        };
+        window.addEventListener('scroll', onStackScroll, { passive: true });
+        window.addEventListener('resize', onStackScroll, { passive: true });
+        updateStack();
+    }
+
     // 3D tilt on hover for cards
     const tiltEls = document.querySelectorAll('.tilt');
     if (!prefersReducedMotion && window.matchMedia('(hover: hover)').matches) {

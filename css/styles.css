@@ -562,6 +562,98 @@ img {
 }
 
 /* ==========================================================================
+   Scroll Stack (services on the homepage)
+   Cards stick and stack as you scroll — pure CSS position:sticky, so they are
+   always visible even if JS never runs; main.js only adds subtle depth.
+   ========================================================================== */
+.scroll-stack {
+    position: relative;
+    max-width: 860px;
+    margin: 0 auto;
+    padding-bottom: 18vh;
+}
+
+.stack-card {
+    position: sticky;
+    /* each card sticks a touch lower than the last, so those behind peek out */
+    top: calc(96px + var(--i, 0) * 18px);
+    margin-bottom: 34px;
+    padding: 44px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 24px;
+    border: 1px solid var(--border-strong);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    transform-origin: center top;
+    background: linear-gradient(135deg, #0f1b38, #0a1226);
+    will-change: transform;
+}
+
+.stack-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    opacity: 0.6;
+}
+.stack-card > * { position: relative; z-index: 1; }
+
+.stack-card.sc1::before { background: radial-gradient(circle at 85% 12%, rgba(56, 189, 248, 0.22), transparent 55%); }
+.stack-card.sc2::before { background: radial-gradient(circle at 85% 12%, rgba(94, 234, 212, 0.20), transparent 55%); }
+.stack-card.sc3::before { background: radial-gradient(circle at 85% 12%, rgba(56, 189, 248, 0.18), transparent 55%); }
+.stack-card.sc4::before { background: radial-gradient(circle at 85% 12%, rgba(94, 234, 212, 0.18), transparent 55%); }
+
+.stack-card.featured { border-color: rgba(56, 189, 248, 0.5); }
+
+.stack-card .popular-badge { top: 22px; right: 24px; }
+
+.stack-num {
+    font-family: var(--font-display);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--cyan);
+}
+
+.stack-card h3 {
+    font-size: clamp(1.6rem, 3.2vw, 2.2rem);
+    margin: 10px 0 14px;
+}
+
+.stack-card .service-desc {
+    font-size: 1.05rem;
+    max-width: 560px;
+    margin-bottom: 22px;
+}
+
+.scroll-stack .service-highlights {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 26px;
+    margin-bottom: 28px;
+}
+
+.stack-card .btn { align-self: flex-start; }
+
+@media (max-width: 640px) {
+    .stack-card {
+        padding: 30px 24px;
+        min-height: auto;
+        top: calc(78px + var(--i, 0) * 14px);
+    }
+    .scroll-stack .service-highlights { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    /* No stacking for reduced-motion users — render as a simple vertical list */
+    .stack-card { position: static; top: auto; min-height: 0; }
+}
+
+/* ==========================================================================
    Industries
    ========================================================================== */
 .industries-section {
