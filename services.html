@@ -12,6 +12,47 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <script>document.documentElement.classList.add('js');</script>
+
+    <!-- FAQ structured data (mirrors the visible Q&A below) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What's the difference between contract staffing and permanent placement?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Permanent placement is for full-time, long-term hires who join your payroll directly. Contract staffing places professionals on a temporary or project basis, ideal for short-term needs, seasonal demand, or try-before-you-hire situations that can convert to permanent later." }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does a typical search take?",
+          "acceptedAnswer": { "@type": "Answer", "text": "It depends on the role's seniority and how specialized the skill set is. Contract and mid-level roles move fastest, while executive and highly specialized searches take longer due to deeper vetting. After a discovery call we provide a realistic timeline for your specific role." }
+        },
+        {
+          "@type": "Question",
+          "name": "How does your fee structure work?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Pricing depends on the service and role — permanent placement, contract staffing, executive search, and HR consulting are each structured differently. We keep it transparent and competitive and walk you through the exact structure before any commitment." }
+        },
+        {
+          "@type": "Question",
+          "name": "Which industries do you recruit for?",
+          "acceptedAnswer": { "@type": "Answer", "text": "We serve technology, healthcare, finance, manufacturing, professional services, and retail & e-commerce, across roles from entry level through the C-suite." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you work with companies outside of New Jersey?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. While based in New Jersey, we partner with organizations across the United States and source candidates nationwide." }
+        },
+        {
+          "@type": "Question",
+          "name": "What makes Pridus Global different from a traditional agency?",
+          "acceptedAnswer": { "@type": "Answer", "text": "We take a consultative, quality-first approach — investing time upfront to understand your business, culture, and exact requirements so candidates are genuinely well-matched, saving your team wasted interviews and delivering strong hires faster." }
+        }
+      ]
+    }
+    </script>
+
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <!-- Google tag (gtag.js) -->
@@ -38,7 +79,7 @@
                     <a href="contact.html" class="nav-link">Contact</a>
                 </nav>
                 <a href="contact.html" class="btn btn-primary">Get Started</a>
-                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -250,6 +291,52 @@
                     <div>
                         <h3>Offer &amp; Onboarding</h3>
                         <p>Support through offer negotiation, acceptance, and smooth transition into your organization with post-placement follow-up to ensure success.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="text-center reveal">Frequently Asked Questions</h2>
+            <p class="subtitle-text reveal">Answers to what clients ask us most</p>
+            <div class="faq-container">
+                <div class="faq-item reveal">
+                    <div class="faq-question">What's the difference between contract staffing and permanent placement?</div>
+                    <div class="faq-answer">
+                        <p>Permanent placement is for full-time, long-term hires who join your payroll directly — we manage the full search and you make the hire. Contract staffing places professionals on a temporary or project basis (often on our payroll), which is ideal for short-term needs, seasonal demand, or "try-before-you-hire" situations that can convert to permanent later.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question">How long does a typical search take?</div>
+                    <div class="faq-answer">
+                        <p>It depends on the role's seniority and how specialized the skill set is. Contract and mid-level roles often move fastest, while executive and highly specialized searches take longer because of the depth of vetting involved. After an initial discovery call we'll give you a realistic timeline for your specific role.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question">How does your fee structure work?</div>
+                    <div class="faq-answer">
+                        <p>Our pricing depends on the service and the role — permanent placement, contract staffing, executive search, and HR consulting are each structured differently. We keep it transparent and competitive (our approach is "expert hiring, not expensive hiring"). Reach out with your specific need and we'll walk you through the exact structure before any commitment.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question">Which industries do you recruit for?</div>
+                    <div class="faq-answer">
+                        <p>We serve a broad range of sectors including technology, healthcare, finance, manufacturing, professional services, and retail &amp; e-commerce — across roles from entry level through the C-suite.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question">Do you work with companies outside of New Jersey?</div>
+                    <div class="faq-answer">
+                        <p>Yes. While we're based in New Jersey, we partner with organizations across the United States and can source candidates nationwide.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question">What makes Pridus Global different from a traditional agency?</div>
+                    <div class="faq-answer">
+                        <p>We take a consultative, quality-first approach — we invest time upfront to understand your business, culture, and exact requirements so that the candidates we present are genuinely well-matched, not just resumes thrown at the wall. That saves your team hours of wasted interviews and delivers strong hires faster.</p>
                     </div>
                 </div>
             </div>

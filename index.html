@@ -24,6 +24,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <script>document.documentElement.classList.add('js');</script>
+
+    <!-- Structured data: tells Google & AI engines exactly what Pridus Global is -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EmploymentAgency",
+      "name": "Pridus Global",
+      "url": "https://www.pridusglobal.com/",
+      "logo": "https://www.pridusglobal.com/images/pridus-logo.png",
+      "description": "Professional recruitment and consulting services firm in the United States. Expert talent acquisition, executive search, and HR consulting solutions.",
+      "telephone": "+1-732-456-8835",
+      "email": "nithin@pridusglobal.com",
+      "areaServed": "US",
+      "sameAs": [
+        "https://www.linkedin.com/company/pridus-global"
+      ]
+    }
+    </script>
+
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <!-- Google tag (gtag.js) -->
@@ -51,7 +70,7 @@
                     <a href="contact.html" class="nav-link">Contact</a>
                 </nav>
                 <a href="contact.html" class="btn btn-primary">Get Started</a>
-                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -286,8 +305,7 @@
                     <span class="logo-chip"><img src="images/pridus-logo.png" alt="Pridus Global Logo" style="height:34px;"></span>
                     <p>Professional recruitment and consulting services firm dedicated to connecting exceptional talent with leading organizations across the United States.</p>
                     <div class="social-links">
-                        <a href="#">LinkedIn</a>
-                        <a href="#">Twitter</a>
+                        <a href="https://www.linkedin.com/company/pridus-global" target="_blank" rel="noopener">LinkedIn</a>
                     </div>
                 </div>
                 <div class="footer-col">

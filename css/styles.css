@@ -1071,6 +1071,71 @@ img {
 }
 
 /* ==========================================================================
+   FAQ (accordion — toggle logic in main.js)
+   ========================================================================== */
+.faq {
+    padding: 90px 0;
+    background: var(--bg);
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 40px auto 0;
+}
+
+.faq-item {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.015));
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    margin-bottom: 14px;
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+}
+
+.faq-item:hover {
+    border-color: var(--border-strong);
+}
+
+.faq-question {
+    padding: 22px 26px;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--text);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+}
+
+.faq-question::after {
+    content: '+';
+    color: var(--cyan);
+    font-size: 1.6rem;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.faq-item.active .faq-question::after {
+    content: '−';
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 26px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 360px;
+    padding: 0 26px 22px;
+}
+
+/* ==========================================================================
    About
    ========================================================================== */
 .about-story {
