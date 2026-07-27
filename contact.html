@@ -60,7 +60,12 @@
             <div class="contact-grid">
                 <div class="contact-form-wrapper reveal">
                     <h2>Send Us a Message</h2>
-                    <form action="https://formspree.io/f/xblrkkbd" method="POST" class="contact-form" id="contactForm">
+                    <form action="https://api.web3forms.com/submit" method="POST" class="contact-form" id="contactForm">
+                        <input type="hidden" name="access_key" value="0224768b-4639-4d94-9cf5-443bbd823871">
+                        <input type="hidden" name="subject" value="New enquiry from pridusglobal.com">
+                        <input type="hidden" name="from_name" value="Pridus Global Website">
+                        <!-- Honeypot: hidden field bots fill in but humans don't -->
+                        <input type="checkbox" name="botcheck" style="display:none !important" tabindex="-1" autocomplete="off">
                         <div class="form-group">
                             <label for="name">Full Name *</label>
                             <input type="text" id="name" name="name" required>

@@ -27,22 +27,53 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Contact Form Handling (using Formspree)
+    // Contact Form Handling — AJAX submit to Formspree so the user stays on the
+    // page and sees a real success/error message instead of a redirect.
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            // Formspree will handle the submission
-            // Show loading state
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Sending...';
-            submitBtn.disabled = true;
+        const successBox = document.getElementById('formSuccess');
+        const errorBox = document.getElementById('formError');
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const originalText = submitBtn ? submitBtn.textContent : 'Send Message';
 
-            // Re-enable after form submission
-            setTimeout(() => {
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            }, 3000);
+        contactForm.addEventListener('submit', async function (e) {
+            e.preventDefault();
+            if (successBox) successBox.style.display = 'none';
+            if (errorBox) errorBox.style.display = 'none';
+            if (submitBtn) { submitBtn.textContent = 'Sending...'; submitBtn.disabled = true; }
+
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: new FormData(contactForm),
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    contactForm.reset();
+                    if (successBox) successBox.style.display = 'block';
+                } else {
+                    // Log the technical detail for debugging, show visitors a friendly fallback
+                    try {
+                        const data = await response.json();
+                        console.warn('Contact form error:', response.status, data);
+                    } catch (err) {
+                        console.warn('Contact form error:', response.status);
+                    }
+                    if (errorBox) {
+                        errorBox.textContent = 'Sorry, there was an error sending your message. Please email nithin@pridusglobal.com or call +1-732-456-8835 directly.';
+                        errorBox.style.display = 'block';
+                    }
+                }
+            } catch (err) {
+                console.warn('Contact form network error:', err);
+                if (errorBox) {
+                    errorBox.textContent = 'Network error — please email nithin@pridusglobal.com or call +1-732-456-8835 directly.';
+                    errorBox.style.display = 'block';
+                }
+            } finally {
+                if (submitBtn) { submitBtn.textContent = originalText; submitBtn.disabled = false; }
+            }
         });
     }
 
